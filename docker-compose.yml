@@ -3,12 +3,14 @@ version: "3.4"
 services:
 
   nextresearch:
+    container_name: nextresearch
     image: nginx:latest
     ports:
-      - 443:443
+      #- "10087:80"
+      - "443:443"
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx.conf:/etc/nginx/conf
       - ./certificates:/etc/nginx/certificates
       - ./nextresearch.io.conf:/etc/nginx/conf.d/nextresearch.io.conf
-      - /var/www/html/:/var/www/html/
-      - /var/www/html/artifacts:/var/www/html/artifacts/
+      - ./html/:/var/www/html/
+      - ./html/artifacts:/var/www/html/artifacts/
