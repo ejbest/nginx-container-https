@@ -12,5 +12,5 @@ services:
       - ./nginx.conf:/etc/nginx/conf
       - ./certificates:/etc/nginx/certificates
       - ./nextresearch.io.conf:/etc/nginx/conf.d/nextresearch.io.conf
-      - ./html/:/var/www/html/
-      - ./html/artifacts:/var/www/html/artifacts/
+      - /var/www/html/:/var/www/html/
+      - /var/www/html/artifacts:/var/www/html/artifacts/
